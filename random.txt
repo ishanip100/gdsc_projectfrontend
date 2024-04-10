@@ -1,0 +1,39 @@
+python
+import random
+
+# Define a dictionary of predefined responses
+responses = {
+    "hello": ["Hi there!", "Hello!", "Hey!"],
+    "how are you": ["I'm just a computer program, but I'm doing well!", "I'm here to assist you."],
+    "goodbye": ["Goodbye!", "See you later!", "Have a great day!"],
+    "name": ["I'm a chatbot.", "You can call me ChatGPT.", "I don't have a name, but you can call me anything you like."],
+}
+
+# Function to generate a response
+def get_response(user_input):
+    user_input = user_input.lower()  # Convert input to lowercase
+    for key in responses:
+        if key in user_input:
+            return random.choice(responses[key])
+    return "I'm sorry, I don't understand that."
+
+# Main chat loop
+print("Chatbot: Hello! How can I assist you today?")
+while True:
+    user_input = input("You: ").strip()
+    if user_input.lower() == "exit":
+        print("Chatbot: Goodbye!")
+        break
+    response = get_response(user_input)
+    print("Chatbot:", response)
+In this simple example:
+
+We define a dictionary (responses) with predefined responses for specific user inputs.
+The get_response function processes user input and returns an appropriate response based on the predefined rules.
+The main chat loop keeps running until the user types "exit," at which point the chatbot says goodbye and the loop exits.
+Keep in mind that this is a basic example of a rule-based chatbot. For more sophisticated chatbots with Natural Language Processing (NLP) capabilities, you may want to explore NLP libraries like NLTK, spaCy, or external chatbot development platforms like Dialogflow, Rasa, or ChatterBot. These tools provide more advanced features for understanding user intents and entities and generating context-aware responses.
+
+
+
+
+
